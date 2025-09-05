@@ -1,0 +1,46 @@
+.main{
+    position: absolute;
+    right: 500px;
+    top: 200px;
+}
+
+.modalButton{
+    width: 70px;
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #125820;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.dropdown{
+    position: absolute;
+    background-color: #fff;
+    width: 200px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 5px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.dropdown li{
+    list-style: none;
+    padding: 10px 15px;
+    color: #000;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.dropdown li:hover{
+    background-color: #125820;
+    color: #fff;
+}
+
+.devider{
+    border: 1px solid #848484;
+}

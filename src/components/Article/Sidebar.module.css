@@ -1,0 +1,40 @@
+.sidebar{
+    background: #848484;
+    border-radius: 5px;
+}
+
+.sidebar ul{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    padding: 0;
+    padding: 15px;
+}
+
+.sidebar a{
+    max-width: 100%;
+    text-wrap: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+    /* border: 1px solid white; */
+}
+.sidebar a:hover{
+    text-decoration: underline;
+}
+
+.H1{
+    font-weight: 700;
+}
+
+.H2{
+    font-weight: 600;
+    margin-left: 7px;
+}
+
+.H3{
+    font-weight: 400;
+    margin-left: 14px;
+}

@@ -1,0 +1,16 @@
+.main{
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.content{
+    max-height: 100vh;
+    overflow-y: scroll;
+}
+
+
+.sidebar{
+    min-width: 250px;
+}
