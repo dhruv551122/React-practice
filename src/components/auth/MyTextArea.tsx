@@ -1,29 +1,24 @@
 import { ErrorMessage, Field, type FieldProps } from "formik";
-import { useState, type ReactNode } from "react";
+import { useState } from "react";
 import classes from "./Register/Register.module.css";
 
-type MyInputType = {
+type MyTextArea = {
   label: string;
   classForLabel?: string;
   classForSpan?: string;
   name: string;
   classForMain?: string;
   id?: string;
-  type?: string;
-  children?: ReactNode;
-  onFileChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-function MyInput({
+function MyTextArea({
   label,
   classForLabel,
   classForSpan,
   name,
-  type,
   id,
   classForMain,
-  onFileChange,
-}: MyInputType) {
+}: MyTextArea) {
   const [isFocused, setIsFocused] = useState<boolean>(false);
   return (
     <div className={classForMain + " " + classes.FieldContainer}>
@@ -40,19 +35,14 @@ function MyInput({
         </span>
         <Field name={name}>
           {({ field, form }: FieldProps) => {
-            console.log(field);
             return (
-              <input
+              <textarea
+                {...field}
                 id={id ? `${name}-${id}` : name}
                 onFocus={() => setIsFocused(true)}
-                onBlur={(e: React.FocusEvent<HTMLInputElement>) => {
+                onBlur={(e: React.FocusEvent<HTMLTextAreaElement>) => {
                   form.handleBlur(e);
                   setIsFocused(false);
-                }}
-                type={type ? type : "text"}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                  form.handleChange(e);
-                  onFileChange?.(e);
                 }}
               />
             );
@@ -68,4 +58,4 @@ function MyInput({
   );
 }
 
-export default MyInput;
+export default MyTextArea;

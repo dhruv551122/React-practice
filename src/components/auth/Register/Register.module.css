@@ -246,6 +246,27 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
     content: '*';
 }
 
+.submitButton{
+    padding: 10px 0px;
+    cursor: pointer;
+    background-color: #705fe2;
+    color: #fff;
+    border: none;
+    outline: none
+}
+
+.noClickEvent{
+    pointer-events: none;
+}
+
+.submitButton:disabled{
+    opacity: 0.5;
+}
+
+.submitButton:disabled{
+    cursor:not-allowed;
+}
+
 @media (max-width: 540px) {
     .form{
         padding: 10px;

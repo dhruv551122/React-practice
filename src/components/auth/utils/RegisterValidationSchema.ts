@@ -85,15 +85,23 @@ export const validationSchema = yup.object({
             .required("Required")
             .test("fileType", "File type must be pdf", (value) => {
                 if (!value) return false;
-                console.log(typeof value)
                 if (value instanceof File) {
                     console.log(value.type)
                     return value.type === "application/pdf";
                 } else if (typeof value === 'string') {
                     const extention = value.split('.')
                     return extention[extention.length - 1] === 'pdf'
+                } else {
+                    return false;
                 }
-                return false;
+                
+            }).test('size check', 'File size must be less than 2MB', (value) => {
+                if (value instanceof File) {
+                    console.log(value.size);
+                    return value.size < 2 * 1024 * 1024; 
+                } else {
+                    return false;
+                }
             }),
         conditionAcceptance: yup
             .boolean()
